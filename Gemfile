@@ -1,0 +1,12 @@
+source 'https://rubygems.org'
+
+gem 'fluentd'
+gem 'dummer'
+gem 'norikra-client'
+gem 'fluent-plugin-flowcounter-simple'
+gem 'fluent-plugin-norikra'
+gem 'fluent-plugin-record-reformer'
+gem 'fluent-plugin-parser'
+gem 'fluent-plugin-stdout_ex'
+gem 'fluent-plugin-datacounter'
+gem 'fluent-plugin-debug'
