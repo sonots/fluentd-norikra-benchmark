@@ -1,5 +1,4 @@
-rbenv local norikra
-norikra start \
+RBENV_VERSION=norikra norikra start \
 -Xmx4096m \
 -Xms4096m \
 -Xss2048k \
