@@ -1,7 +1,6 @@
 norikra-client target open visualizer time:integer
-norikra-client query remove status_count.all.api_restful
-norikra-client query remove status_count.host.api_restful
-norikra-client query remove status_count.endpoint.api_restful
+norikra-client query remove status_count.all
+norikra-client query remove status_count.host
 
 # 全体
 norikra-client query add status_count.all "$(cat <<EOF
@@ -13,7 +12,7 @@ COUNT(1, status REGEXP '^400$') AS count_400, \
 COUNT(1, status REGEXP '^4(?!00)\d\d$') AS count_4xx, \
 COUNT(1, status REGEXP '^503$') AS count_503, \
 COUNT(1, status REGEXP '^5(?!03)\d\d$') AS count_5xx \
-FROM visualizer.win:time_batch(60 sec) \
+FROM visualizer.win:time_batch(5 sec) \
 GROUP BY label
 EOF
 )"
@@ -27,7 +26,7 @@ COUNT(1, status REGEXP '^400$') AS count_400, \
 COUNT(1, status REGEXP '^4(?!00)\d\d$') AS count_4xx, \
 COUNT(1, status REGEXP '^503$') AS count_503, \
 COUNT(1, status REGEXP '^5(?!03)\d\d$') AS count_5xx \
-FROM visualizer.win:time_batch(60 sec) \
+FROM visualizer.win:time_batch(5 sec) \
 GROUP BY label, host
 EOF
 )"
