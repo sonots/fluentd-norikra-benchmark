@@ -13,7 +13,7 @@ COUNT(1, status REGEXP '^400$') AS count_400, \
 COUNT(1, status REGEXP '^4(?!00)..$') AS count_4xx, \
 COUNT(1, status REGEXP '^503$') AS count_503, \
 COUNT(1, status REGEXP '^5(?!03)..$') AS count_5xx \
-FROM visualizer.win:ext_timed_batch(time * 1000, 60 sec) \
+FROM visualizer.win:ext_timed_batch(time * 1000, 1 sec) \
 GROUP BY label
 EOF
 )"
@@ -27,7 +27,7 @@ COUNT(1, status REGEXP '^400$') AS count_400, \
 COUNT(1, status REGEXP '^4(?!00)..$') AS count_4xx, \
 COUNT(1, status REGEXP '^503$') AS count_503, \
 COUNT(1, status REGEXP '^5(?!03)..$') AS count_5xx \
-FROM visualizer.win:ext_timed_batch(time * 1000, 60 sec) \
+FROM visualizer.win:ext_timed_batch(time * 1000, 1 sec) \
 GROUP BY label, host
 EOF
 )"
